@@ -12,6 +12,7 @@ themes = []
 #parse the following:
 #mandatory - api key, path to dorks, no. of pagese to scrape in google (should be less than 100)
 #optional - 
+#change url to "domain" in the key organic_results
 
 
 
@@ -25,38 +26,88 @@ def main():
 
 
 	url = "http://api.serpstack.com/search"
-	api_key = "a5cdb1b4a31855554f51374c382641b5"
-	query = ["site:.wordpress.com", "Proudly powered by WordPress", "intitle: Wordpress"]
-	num = "100"
-	page= "1"
+	api_key = "f0503c3e3c3760fcb21678fbe54ca38c" # ppcall - "322655c5ba05066cbb7afb7b2d85f52d" # vc@gmail.com - "a5cdb1b4a31855554f51374c382641b5"
+	query = ["site:.wordpress.com"] #, "Proudly powered by WordPress", "intitle: Wordpress"]
+	num = "15"
+	page= "3"
 
 	for each_query in query:
-		for page in range(1, 11):
+		for page in range(1, 4):
 			page_num = str(page)
 			request = url+"?"+"access_key="+api_key+"&"+"query="+each_query+"&"+"num="+num+"&"+"page="+page_num
 
 #			print(request)
-			scraper(request)
+			print("Sending request for page: "+page_num)
 
-def scraper(request):
-   #urls = []
+			api_request = requests.get(request)
+			response = api_request.text
+
+			with open("serpstack_20.json", "a") as file:
+				file.write(response)
+	print("\n\n")			
+	scraper()
+
+def scraper_2(request):
+	jsonz = []
+
 	api_request = requests.get(request)
 	response = api_request.text
-	#print(response)
+	jsonz.append(response)
 
-	with open("serpstack_20.json", "w") as file:
-		file.write(response)
-
-	with open("serpstack_20.json", "r") as file:
-		output = json.load(file)
-		for results in output['organic_results']:
+	for all_reqs in jsonz:	
+		reks = json.dumps(all_reqs)
+		#output = json.load(reks)
+		for results in reks['organic_results']:
 			url_list = results['url']
 			urls.append(url_list)
+
+	for all_urlz in urls:
+		print(all_urlz)
+
+def scraper():
+	
+	# print(page_num)
+	urls = []
+	count = 0
+	# api_request = requests.get(request)
+	# response = api_request.text
+	# #print(response)
+
+	# with open("serpstack_20.json", "a") as file:
+	# 	file.write(response)
+
+	with open("serpstack_20.json", "r") as file:
+		jArray = file.read()
+		newJArray = jArray.replace("}{","},{")
+		json_data = json.loads(f'[{newJArray}]')
+
+	for i in json_data:	
+		for results in i['organic_results']:
+			url_list = results['url']
+			urls.append(url_list)
+
+	for all_urlz in urls:
+		count = count + 1
+
+	print("[+] Total urls found = "+str(count))
+	print("Printing all URLs: \n")
+	
+	for all_urls in urls:
+		print(all_urls)
+
+
+	# 	output = json.load(file)
+	# 	for results in output['organic_results']:
+	# 		url_list = results['url']
+	# 		urls.append(url_list)
+
+	# for all_urlz in urls:
+	# 	print(all_urlz)
 
 	#print(urls)
 	#for each_url in urls:		
 	#	cms_find(each_url)
-	cms_find()
+	#cms_find()
 
 def cms_find():
 			
