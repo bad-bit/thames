@@ -19,18 +19,6 @@ import argparse
 urls = []
 themes = []
 
-#TODO
-#1. parse the following:
-#mandatory - api key, path to dorks, no. of pagese to scrape in google (should be less than 100)
-#3. Add to WP detection logic - Done
-#4. Optimize/Lean the regex
-#5. Color & font
-#6. Cool logo
-#7. Learn to format print statements the pro way by using curly braces
-#8. Stress test program on VPS
-#9. Remove slug from URL and only keep TLD in "Theme for the URL is: "
-#10. Only send locator to websites' TLD -> use tldextract maybe?
-
 def main():
 	
 	parser = argparse.ArgumentParser(
