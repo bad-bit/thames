@@ -78,7 +78,7 @@ def main():
 		print("""[~] Please note that the number of search results given by Google usually do not exceed 150. Thus, increasing
 the number of pages beyond 20 doesn't really increase the number of scraped URLs. The problem is not with the tool, that is just how
 Google works. :D""")
-	exit()
+
 	for each_query in query:
 		for page in range(1, page):
 			page_num = str(page)
