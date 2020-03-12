@@ -2,7 +2,7 @@
 
 #1. Color (Colorama, termcolor)
 #2. Stress test program on VPS - Done @516 MB/s
-#3. Remove slug from URL and only keep TLD in "Theme for the URL is: " - Done
+#3. Remove slug from URL and only keep TLD in "Theme for the URL is: "
 #4. Only send locator to websites' TLD -> use tldextract maybe?
 #5. Update delete logic for Linux based systems
 #6. Thread API requests in main
