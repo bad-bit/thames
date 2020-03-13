@@ -26,7 +26,7 @@ def main():
 		usage='%(prog)s --help <for help> -k <Serpstack API key> -d <comma seperated Google Dorks in double quotes> -f (OPTIONAL) <path to Google Dork files> -v (OPTIONAL) <verbosity level>')
 	parser.add_argument("-k", "--key", help="Your API key as received from Serpstack", required=True, dest='key')
 	parser.add_argument("-d", "--dork", help="Comma seperated Google Dorks. Eg: thames.py -d \"intitle: Wordpress, site:.wordpress.com\"", type=str)
-	parser.add_argument("-f", "--file", help="Path of file listing your search terms / Google Dorks", dest='file')
+	parser.add_argument("-f", "--file", help=" Full path of file listing your search terms / Google Dorks. Eg: thames.py -f C:\somedir\dorkfile.txt", dest='file')
 	parser.add_argument("-v", "--verbose", help="Verbosity level", action='count', default=0, dest='verb')
 	parser.add_argument("-p", "--page", help="Number of Google search result pages to scrape. Default value is set to 5 pages.", default=5, dest='page', type=int)
 
@@ -48,7 +48,7 @@ def main():
 			
 	if args.file:
 		with open(args.file, "r") as dorkfile:
-			query = dfile.read().splitlines()
+			query = dorkfile.read().splitlines()
 	elif args.dork:
 		query = args.dork.split(",")
 	else:
