@@ -81,7 +81,7 @@ Google works. :D""")
 			page_num = str(page_no)
 			request = url+"?"+"access_key="+api_key+"&"+"query="+each_query+"&"+"num="+num+"&"+"page="+page_num
 			if args.verb == 1:
-				print("[+] Scraping URLs from Google results from page: "+page_num)
+				print("[+] Scraping URLs from Google results from page: "+page_num+" for the dork: "+each_query)
 			api_request = requests.get(request)
 			response = api_request.text
 
