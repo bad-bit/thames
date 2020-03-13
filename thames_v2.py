@@ -148,7 +148,8 @@ def locator(verb_value):
 						print("[-] Theme not found for - "+each_url+"\nThe CMS for the webiste might not be WordPress\n")		
 
 			else:
-				print("[-] The CMS for the website "+each_url+" is not WordPress")
+				if verb_value == 2:
+					print("[-] The CMS for the website "+each_url+" is not WordPress")
 		except:			
 			print("[-] URL - "+each_url+" seems unreachable, moving to next URL \n\n")	
 
