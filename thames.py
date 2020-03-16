@@ -57,7 +57,7 @@ def main():
 
 	
 	url = "http://api.serpstack.com/search"
-	api_key = args.key #josh = fd28cab4eea05107a19e441a13804d48 "f0503c3e3c3760fcb21678fbe54ca38c"  #shriyakulkarni -  # ppcall - "322655c5ba05066cbb7afb7b2d85f52d" # vc@gmail.com - "a5cdb1b4a31855554f51374c382641b5"
+	api_key = args.key 
 	#query = ["intitle: Wordpress"] #, "Proudly powered by WordPress", "site:.wordpress.com"]
 	num = "10"
 	page = args.page
@@ -134,7 +134,7 @@ def locator(verb_value):
 			if req.status_code == 302:
 				print("    [*]The url: "+each_url+" was redirected." )
 			source = req.text
-			# #regex to identify themes/<theme name> = themes/[a-zA-Z0-9]+
+			
 			if "wp-content" in source or "wp-includes" in source:
 				if verb_value == 2:
 					print("[+] The CMS for the website "+each_url+" is WordPress")
