@@ -1,0 +1,3 @@
+intitle: WordPress
+intext: Proudly Powered by WordPress
+site:.wordpress.com
