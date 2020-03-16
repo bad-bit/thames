@@ -6,3 +6,4 @@
 #4. Only send locator to websites' TLD -> use tldextract maybe?
 #5. Update delete logic for Linux based systems - Done
 #6. Thread API requests in main
+#7. Restrict number of pages toscrap to  less than 20
