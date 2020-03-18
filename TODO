@@ -7,3 +7,4 @@
 #5. Update delete logic for Linux based systems - Done
 #6. Thread API requests in main
 #7. Restrict number of pages toscrap to  less than 20
+#8. Add logic to identify CMS for cdn.<domain>
