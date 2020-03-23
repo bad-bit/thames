@@ -199,8 +199,9 @@ def locator(verb_value):
 				not_found_list.append(nf)
 		
 		print("[*] Theme couldn't be found for the following "+str(notctr)+" websites:\nThe websites might not be using WordPress.\n")
-		for all_webs in not_found_list:
-			print(all_webs)
+		if verb_value == 2:
+			for all_webs in not_found_list:
+				print(all_webs)
 
 # tac = time.perf_counter()
 # print("\n\n")	
