@@ -109,7 +109,7 @@ def scraper(verb_value):
 				url_list = results['url']
 				urls.append(url_list)
 	except KeyError:
-		print("[-] Your API usage limit has been exhausted on https://www.serpstack.com")
+		print("[-] Your API usage limit has been exhausted on https://www.serpstack.com. If not, please try some other dorks.")
 		exit()
 
 	for all_urlz in urls:
