@@ -38,12 +38,14 @@ def main():
 		cwd = os.getcwd()
 		#need to change directory to CWD for Windows systems where in Python is not in the environment variables.
 		os.chdir(cwd)
-		if os.path.isfile("serpstack_20.json") and os.path.isfile("Output.txt"):
+		if os.path.isfile("serpstack_20.json"):
 			os.remove("serpstack_20.json")
+		if os.path.isfile("Output.txt"):
 			os.remove("Output.txt")
 	elif sys.platform.startswith("linux"):
-		if os.path.isfile("serpstack_20.json") and os.path.isfile("Output.txt"):
+		if os.path.isfile("serpstack_20.json"):
 			os.remove("serpstack_20.json")
+		os.path.isfile("Output.txt"):
 			os.remove("Output.txt")
 			
 	if args.file:
