@@ -6,7 +6,7 @@ Just feed Google Dorks and let it scrape the internet!
 
 ## **Usage**
 
-thames.py -k \<API key from [Serpstack](http://www.serpstack.com) \> -d|-f <Comma seperated Google Dorks / Path to dork file>
+python3 thames.py -k \<API key from [Serpstack](http://www.serpstack.com) \> -d|-f <Comma seperated Google Dorks / Path to dork file>
 
 <br>
 <p align="center">
