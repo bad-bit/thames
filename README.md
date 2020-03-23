@@ -14,7 +14,7 @@ thames.py -k \<API key from [Serpstack](http://www.serpstack.com) \> -d|-f <Comm
 </p>
 </br>
 
-Optional parameters:
-1. -p <Number of pages to scrape in Google search results. Default value is 5. The value should be less than 20.>
-2. -v <Verbosity> Eg: -vv
-3. -h <help>
+### Optional parameters:
+1. -p : Number of pages to scrape in Google search results. Default value is 5. The value should be less than 20.
+2. -v : Set verbosity. Eg: -vv
+3. -h : Help message
