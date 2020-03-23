@@ -45,7 +45,7 @@ def main():
 	elif sys.platform.startswith("linux"):
 		if os.path.isfile("serpstack_20.json"):
 			os.remove("serpstack_20.json")
-		os.path.isfile("Output.txt"):
+		if os.path.isfile("Output.txt"):
 			os.remove("Output.txt")
 			
 	if args.file:
